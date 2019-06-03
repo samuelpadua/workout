@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table should render Table 1`] = `
+.c0 {
+  width: 100%;
+  text-align: left;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.c0 th,
+.c0 td {
+  padding: 10px 0;
+}
+
+.c0 th {
+  border-bottom: 1px solid #8C8C8C;
+}
+
+.c0 td {
+  border-bottom: 1px solid #E5E5E5;
+}
+
+<table
+  className="c0"
+>
+  <thead>
+    <tr>
+      <th>
+        Head
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <td>
+      <th>
+        Body
+      </th>
+    </td>
+  </tbody>
+  <tfoot>
+    <td>
+      <th>
+        Footer
+      </th>
+    </td>
+  </tfoot>
+</table>
+`;
