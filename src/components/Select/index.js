@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { Flex, Box } from '@rebass/grid'
 import { colors } from '../../constants'
 
 const SelectStyled = styled.select`
@@ -10,7 +11,7 @@ const SelectStyled = styled.select`
   border: ${
     props => props.error
       ? `2px solid ${colors.error}`
-      : `1px solid ${colors.lightGray}`
+      : `1px solid ${colors.gray}`
   };
   font: inherit;
   color: currentColor;
@@ -37,20 +38,48 @@ const SelectStyled = styled.select`
   }
 `
 
+const LabelStyled = styled.label`
+  font-size: 13px;
+  font-weight: 700;
+  color: ${colors.mineShaft};
+`
+
+const LabelErrorStyled = styled.span`
+  font-size: 13px;
+  color: ${colors.error};
+`
+
 function Select (props) {
   const {
-    options
+    options,
+    label,
+    error,
+    errorMessage
   } = props
 
   return (
-    <SelectStyled { ...props }>
-      <option>Selecione</option>
-      {
-        options.map(({ value, text }) => (
-          <option key={value} value={value}>{text}</option>
-        ))
-      }
-    </SelectStyled>
+    <Flex flexDirection="column">
+      <Box mb="4px">
+        <LabelStyled>
+          { label }
+        </LabelStyled>
+      </Box>
+      <Box>
+        <SelectStyled { ...props }>
+          <option>Selecione</option>
+          {
+            options.map(({ value, text }) => (
+              <option key={value} value={value}>{text}</option>
+            ))
+          }
+        </SelectStyled>
+      </Box>
+      {error && (
+        <Box mt="4px">
+          <LabelErrorStyled>{ errorMessage }</LabelErrorStyled>
+        </Box>
+      )}
+    </Flex>
   )
 }
 
@@ -58,7 +87,14 @@ Select.propTypes = {
   options: PropTypes.arrayOf(PropTypes.shape({
     value: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired
-  })).isRequired
+  })).isRequired,
+  error: PropTypes.bool,
+  errorMessage: PropTypes.string
+}
+
+Select.defaultProps = {
+  error: false,
+  errorMessage: ''
 }
 
 export default Select

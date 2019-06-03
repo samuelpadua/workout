@@ -1,7 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Select default should render Select 1`] = `
+.c1 {
+  box-sizing: border-box;
+  margin-bottom: 4px;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
 .c0 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
   position: relative;
   border-radius: 4px;
   background: transparent;
@@ -14,8 +34,8 @@ exports[`Select default should render Select 1`] = `
   padding: 6px 12px 7px;
 }
 
-.c0:focus,
-.c0:active {
+.c4:focus,
+.c4:active {
   border-color: red;
   border: 2px solid #0086FF;
   padding: 5px 11px 6px;
@@ -24,32 +44,78 @@ exports[`Select default should render Select 1`] = `
   box-shadow: none !important;
 }
 
-<select
+.c2 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #404040;
+}
+
+<div
   className="c0"
 >
-  <option>
-    Selecione
-  </option>
-  <option
-    value="run"
+  <div
+    className="c1"
   >
-    Run
-  </option>
-  <option
-    value="swimming"
+    <label
+      className="c2"
+    />
+  </div>
+  <div
+    className="c3"
   >
-    Swimming
-  </option>
-  <option
-    value="bike"
-  >
-    Bike
-  </option>
-</select>
+    <select
+      className="c4"
+    >
+      <option>
+        Selecione
+      </option>
+      <option
+        value="run"
+      >
+        Run
+      </option>
+      <option
+        value="swimming"
+      >
+        Swimming
+      </option>
+      <option
+        value="bike"
+      >
+        Bike
+      </option>
+    </select>
+  </div>
+</div>
 `;
 
 exports[`Select error should render Select with error state 1`] = `
+.c1 {
+  box-sizing: border-box;
+  margin-bottom: 4px;
+}
+
+.c3 {
+  box-sizing: border-box;
+}
+
+.c5 {
+  box-sizing: border-box;
+  margin-top: 4px;
+}
+
 .c0 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
   position: relative;
   border-radius: 4px;
   background: transparent;
@@ -62,8 +128,8 @@ exports[`Select error should render Select with error state 1`] = `
   padding: 5px 11px 6px;
 }
 
-.c0:focus,
-.c0:active {
+.c4:focus,
+.c4:active {
   border-color: red;
   border: 2px solid #FF253A;
   padding: 5px 11px 6px;
@@ -72,26 +138,61 @@ exports[`Select error should render Select with error state 1`] = `
   box-shadow: none !important;
 }
 
-<select
+.c2 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #404040;
+}
+
+.c6 {
+  font-size: 13px;
+  color: #FF253A;
+}
+
+<div
   className="c0"
 >
-  <option>
-    Selecione
-  </option>
-  <option
-    value="run"
+  <div
+    className="c1"
   >
-    Run
-  </option>
-  <option
-    value="swimming"
+    <label
+      className="c2"
+    />
+  </div>
+  <div
+    className="c3"
   >
-    Swimming
-  </option>
-  <option
-    value="bike"
+    <select
+      className="c4"
+    >
+      <option>
+        Selecione
+      </option>
+      <option
+        value="run"
+      >
+        Run
+      </option>
+      <option
+        value="swimming"
+      >
+        Swimming
+      </option>
+      <option
+        value="bike"
+      >
+        Bike
+      </option>
+    </select>
+  </div>
+  <div
+    className="c5"
   >
-    Bike
-  </option>
-</select>
+    <span
+      className="c6"
+    >
+      
+    </span>
+  </div>
+</div>
 `;

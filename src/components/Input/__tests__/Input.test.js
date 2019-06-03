@@ -17,7 +17,7 @@ describe('Input', () => {
   
     it('should change color border on focus', () => {
       const tree = renderer.create(<Input />).toJSON()
-      expect(tree).toHaveStyleRule('border', `2px solid ${colors.default}`, {
+      expect(tree.children[1].children[0]).toHaveStyleRule('border', `2px solid ${colors.default}`, {
         modifier: ':focus',
       })
     })
@@ -34,7 +34,7 @@ describe('Input', () => {
 
     it('should change color border on focus error state', () => {
       const tree = renderer.create(<Input error />).toJSON()
-      expect(tree).toHaveStyleRule('border', `2px solid ${colors.error}`, {
+      expect(tree.children[1].children[0]).toHaveStyleRule('border', `2px solid ${colors.error}`, {
         modifier: ':focus',
       })
     })

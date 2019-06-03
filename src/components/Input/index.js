@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { Flex, Box } from '@rebass/grid'
 import { colors } from '../../constants'
 
 const InputStyled = styled.input`
@@ -10,7 +11,7 @@ const InputStyled = styled.input`
   border: ${
     props => props.error
       ? `2px solid ${colors.error}`
-      : `1px solid ${colors.lightGray}`
+      : `1px solid ${colors.gray}`
   };
   font: inherit;
   color: currentColor;
@@ -36,16 +37,53 @@ const InputStyled = styled.input`
   }
 `
 
+const LabelStyled = styled.label`
+  font-size: 13px;
+  font-weight: 700;
+  color: ${colors.mineShaft};
+`
+
+const LabelErrorStyled = styled.span`
+  font-size: 13px;
+  color: ${colors.error};
+`
+
 function Input (props) {
-  return <InputStyled { ...props } />
+  const {
+    label,
+    error,
+    errorMessage
+  } = props
+
+  return (
+    <Flex flexDirection="column">
+      <Box mb="4px">
+        <LabelStyled>
+          { label }
+        </LabelStyled>
+      </Box>
+      <Box>
+        <InputStyled { ...props } />
+      </Box>
+      {error && (
+        <Box mt="4px">
+          <LabelErrorStyled>{ errorMessage }</LabelErrorStyled>
+        </Box>
+      )}
+    </Flex>
+  )
 }
 
 Input.propTypes = {
-  error: PropTypes.bool
+  error: PropTypes.bool,
+  errorMessage: PropTypes.string,
+  label: PropTypes.string
 }
 
 Input.defaultProps = {
-  error: false
+  error: false,
+  errorMessage: '',
+  label: ''
 }
 
 export default Input

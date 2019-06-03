@@ -32,11 +32,10 @@ describe('Select', () => {
   
     it('should change color border on focus or active', () => {
       const tree = renderer.create(<Select options={selectOptions} />).toJSON()
-      expect(tree).toHaveStyleRule('border', `2px solid ${colors.default}`, {
+      expect(tree.children[1].children[0]).toHaveStyleRule('border', `2px solid ${colors.default}`, {
         modifier: ':focus',
       })
-
-      expect(tree).toHaveStyleRule('border', `2px solid ${colors.default}`, {
+      expect(tree.children[1].children[0]).toHaveStyleRule('border', `2px solid ${colors.default}`, {
         modifier: ':active',
       })
     })
@@ -53,11 +52,11 @@ describe('Select', () => {
 
     it('should change color border on focus or active error state', () => {
       const tree = renderer.create(<Select options={selectOptions} error />).toJSON()
-      expect(tree).toHaveStyleRule('border', `2px solid ${colors.error}`, {
+      expect(tree.children[1].children[0]).toHaveStyleRule('border', `2px solid ${colors.error}`, {
         modifier: ':focus',
       })
 
-      expect(tree).toHaveStyleRule('border', `2px solid ${colors.error}`, {
+      expect(tree.children[1].children[0]).toHaveStyleRule('border', `2px solid ${colors.error}`, {
         modifier: ':active',
       })
     })
