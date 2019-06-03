@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button default should render Button 1`] = `
+.c0 {
+  width: 100%;
+  padding: 6px;
+  border: 0;
+  font: inherit;
+  height: 3em;
+  border-radius: 4px;
+  background: #0086FF;
+  box-shadow: none !important;
+  outline: 0;
+  color: white;
+}
+
+.c0:hover {
+  background: #006de6;
+}
+
+.c0:active {
+  background: #0053cc;
+}
+
+<button
+  className="c0"
+  color="default"
+>
+  Default
+</button>
+`;
+
+exports[`Button error should render Button with color error 1`] = `
+.c0 {
+  width: 100%;
+  padding: 6px;
+  border: 0;
+  font: inherit;
+  height: 3em;
+  border-radius: 4px;
+  background: #FF253A;
+  box-shadow: none !important;
+  outline: 0;
+  color: white;
+}
+
+.c0:hover {
+  background: #e60c21;
+}
+
+.c0:active {
+  background: #cc0007;
+}
+
+<button
+  className="c0"
+  color="error"
+>
+  Default
+</button>
+`;
