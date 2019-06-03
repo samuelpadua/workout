@@ -5,7 +5,7 @@ import { darken } from '../../utils/LightenDarkenColor'
 import { colors } from '../../constants'
 
 const ButtonStyled = styled.button`
-  width: 100%;
+  width: ${props => props.full ? '100%' : ''};
   padding: 6px;
   border: 0;
   font: inherit;
@@ -36,11 +36,13 @@ function Button (props) {
 }
 
 Button.propTypes = {
-  color: PropTypes.oneOf(['default', 'success', 'warning', 'error'])
+  color: PropTypes.oneOf(['default', 'success', 'warning', 'error']),
+  full: PropTypes.bool
 }
 
 Button.defaultProps = {
-  color: 'default'
+  color: 'default',
+  full: false
 }
 
 export default Button
