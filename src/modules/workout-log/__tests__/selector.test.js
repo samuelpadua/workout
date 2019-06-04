@@ -3,6 +3,7 @@ import sortByAlphabet from '../../../utils/sortByAlphabet'
 import sortByDate from '../../../utils/sortByDate'
 import {
   getList,
+  getTotalExerciseTime,
   serializeList,
 } from '../selector'
 import workoutReducer, { INITIAL_STATE } from '../reducer'
@@ -10,25 +11,25 @@ import workoutReducer, { INITIAL_STATE } from '../reducer'
 const list = [
   {
     uuid: guid(),
-    timeSpent: '10:00',
+    timeSpent: '00:30',
     type: 'run',
     date: '2020-06-01',
   },
   {
     uuid: guid(),
-    timeSpent: '09:30',
+    timeSpent: '00:45',
     type: 'bike',
     date: '2019-06-01',
   },
   {
     uuid: guid(),
-    timeSpent: '11:30',
+    timeSpent: '01:00',
     type: 'run',
     date: '2021-06-01',
   },
   {
     uuid: guid(),
-    timeSpent: '10:30',
+    timeSpent: '00:30',
     type: 'swimming',
     date: '2022-06-01',
   },
@@ -61,5 +62,16 @@ describe('selector workout log', () => {
     const state = workoutReducer(initialState, {})
 
     expect(getList(state)).toEqual(serializeList(sortByAlphabet(state.list, 'type', 'asc')))
+  })
+
+  it('should sum total hours of exercises', () => {
+    const initialState = {
+      ...INITIAL_STATE,
+      list,
+    }
+
+    const state = workoutReducer(initialState, {})
+
+    expect(getTotalExerciseTime(state)).toEqual(2.75)
   })
 })

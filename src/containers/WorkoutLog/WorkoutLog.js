@@ -31,6 +31,7 @@ WorkoutLogApp.propTypes = {
 const mapStateToProps = state => ({
   ...state.workoutLog,
   list: selectors.getList(state.workoutLog),
+  totalExerciseTime: selectors.getTotalExerciseTime(state.workoutLog),
 })
 
 export default connect(mapStateToProps, { ...actions })(WorkoutLogApp)

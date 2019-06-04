@@ -8,6 +8,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import UnfoldMoreIcon from '@material-ui/icons/UnfoldMore'
 import Table from '../../../components/Table'
 import EmptyList from '../../../components/EmptyList'
+import TotalExerciseHours from './TotalExerciseHours'
 import { colors } from '../../../constants'
 
 const IconStyled = styled(DeleteIcon)`
@@ -56,6 +57,7 @@ function Exercises(props) {
     list,
     filter,
     changeFilter,
+    totalExerciseTime,
   } = props
 
   if (!list.length) {
@@ -63,66 +65,71 @@ function Exercises(props) {
   }
 
   return (
-    <Flex px={2}>
-      <Table>
-        <thead>
-          <tr>
-            <th>
-              <Flex justifyContent="space-between">
-                <Box>Tempo</Box>
-                <Box mr={20}>
-                  <OrderByArrow
-                    {...filter}
-                    changeFilter={changeFilter}
-                    actualColumn="timeSpent"
-                  />
-                </Box>
-              </Flex>
-            </th>
-            <th>
-              <Flex justifyContent="space-between">
-                <Box>Tipo</Box>
-                <Box mr={20}>
-                  <OrderByArrow
-                    {...filter}
-                    changeFilter={changeFilter}
-                    actualColumn="type"
-                  />
-                </Box>
-              </Flex>
-            </th>
-            <th>
-              <Flex justifyContent="space-between">
-                <Box>Data</Box>
-                <Box mr={20}>
-                  <OrderByArrow
-                    {...filter}
-                    changeFilter={changeFilter}
-                    actualColumn="date"
-                  />
-                </Box>
-              </Flex>
-            </th>
-            <th />
-          </tr>
-        </thead>
-        <tbody>
-          {
-            list.map(log => (
-              <tr key={log.uuid}>
-                <td width="33.33%">{ log.timeSpent }</td>
-                <td width="33.33%">{ log.type }</td>
-                <td width="33.33%">{ log.date }</td>
-                <td width="40px">
-                  <IconStyled
-                    onClick={() => remove({ uuid: log.uuid })}
-                  />
-                </td>
-              </tr>
-            ))
-          }
-        </tbody>
-      </Table>
+    <Flex px={2} flexDirection="column">
+      <Box>
+        <Table>
+          <thead>
+            <tr>
+              <th>
+                <Flex justifyContent="space-between">
+                  <Box>Tempo</Box>
+                  <Box mr={20}>
+                    <OrderByArrow
+                      {...filter}
+                      changeFilter={changeFilter}
+                      actualColumn="timeSpent"
+                    />
+                  </Box>
+                </Flex>
+              </th>
+              <th>
+                <Flex justifyContent="space-between">
+                  <Box>Tipo</Box>
+                  <Box mr={20}>
+                    <OrderByArrow
+                      {...filter}
+                      changeFilter={changeFilter}
+                      actualColumn="type"
+                    />
+                  </Box>
+                </Flex>
+              </th>
+              <th>
+                <Flex justifyContent="space-between">
+                  <Box>Data</Box>
+                  <Box mr={20}>
+                    <OrderByArrow
+                      {...filter}
+                      changeFilter={changeFilter}
+                      actualColumn="date"
+                    />
+                  </Box>
+                </Flex>
+              </th>
+              <th />
+            </tr>
+          </thead>
+          <tbody>
+            {
+              list.map(log => (
+                <tr key={log.uuid}>
+                  <td width="33.33%">{ log.timeSpent }</td>
+                  <td width="33.33%">{ log.type }</td>
+                  <td width="33.33%">{ log.date }</td>
+                  <td width="40px">
+                    <IconStyled
+                      onClick={() => remove({ uuid: log.uuid })}
+                    />
+                  </td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </Table>
+      </Box>
+      <Box>
+        <TotalExerciseHours hours={totalExerciseTime} />
+      </Box>
     </Flex>
   )
 }
@@ -139,6 +146,7 @@ Exercises.propTypes = {
   }).isRequired,
   remove: PropTypes.func.isRequired,
   changeFilter: PropTypes.func.isRequired,
+  totalExerciseTime: PropTypes.number.isRequired,
 }
 
 Exercises.defaultProps = {

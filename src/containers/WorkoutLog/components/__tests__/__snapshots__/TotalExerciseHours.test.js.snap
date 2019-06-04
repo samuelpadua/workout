@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TotalExerciseHours should render message with total of hours 1`] = `
+.c0 {
+  box-sizing: border-box;
+  padding: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1 {
+  color: #00D604;
+}
+
+<div
+  className="c0"
+>
+  <h3
+    className="c1"
+  >
+    8.5 horas de exercícios realizados
+  </h3>
+</div>
+`;
