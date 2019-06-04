@@ -11,10 +11,10 @@ describe('Input', () => {
       const tree = renderer
         .create(<Input />)
         .toJSON()
-  
+
       expect(tree).toMatchSnapshot()
     })
-  
+
     it('should change color border on focus', () => {
       const tree = renderer.create(<Input />).toJSON()
       expect(tree.children[1].children[0]).toHaveStyleRule('border', `2px solid ${colors.default}`, {
@@ -28,7 +28,7 @@ describe('Input', () => {
       const tree = renderer
         .create(<Input error />)
         .toJSON()
-  
+
       expect(tree).toMatchSnapshot()
     })
 

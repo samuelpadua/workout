@@ -8,16 +8,16 @@ import { colors } from '../../../constants'
 const selectOptions = [
   {
     value: 'run',
-    text: 'Run'
+    text: 'Run',
   },
   {
     value: 'swimming',
-    text: 'Swimming'
+    text: 'Swimming',
   },
   {
     value: 'bike',
-    text: 'Bike'
-  }
+    text: 'Bike',
+  },
 ]
 
 describe('Select', () => {
@@ -26,10 +26,10 @@ describe('Select', () => {
       const tree = renderer
         .create(<Select options={selectOptions} />)
         .toJSON()
-  
+
       expect(tree).toMatchSnapshot()
     })
-  
+
     it('should change color border on focus or active', () => {
       const tree = renderer.create(<Select options={selectOptions} />).toJSON()
       expect(tree.children[1].children[0]).toHaveStyleRule('border', `2px solid ${colors.default}`, {
@@ -46,7 +46,7 @@ describe('Select', () => {
       const tree = renderer
         .create(<Select options={selectOptions} error />)
         .toJSON()
-  
+
       expect(tree).toMatchSnapshot()
     })
 

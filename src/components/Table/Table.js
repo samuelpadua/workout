@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { colors } from '../../constants'
 
@@ -21,12 +22,22 @@ const TableStyled = styled.table`
   }
 `
 
-function Table (props) {
+function Table(props) {
+  const { children } = props
+
   return (
     <TableStyled>
-      { props.children }
+      { children }
     </TableStyled>
   )
+}
+
+Table.propTypes = {
+  children: PropTypes.node,
+}
+
+Table.defaultProps = {
+  children: '',
 }
 
 export default Table

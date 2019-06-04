@@ -9,28 +9,28 @@ const InputStyled = styled.input`
   border-radius: 4px;
   box-sizing : border-box;
   border: ${
-    props => props.error
-      ? `2px solid ${colors.error}`
-      : `1px solid ${colors.gray}`
-  };
+  props => (props.error
+    ? `2px solid ${colors.error}`
+    : `1px solid ${colors.gray}`)
+};
   font: inherit;
   color: currentColor;
   width: 100%;
   height: 3em;
   margin: 0;
   padding: ${
-    props => props.error
-      ? '5px 11px 6px'
-      : '6px 12px 7px'
-  };
+  props => (props.error
+    ? '5px 11px 6px'
+    : '6px 12px 7px')
+};
 
   &:focus {
     border-color: red;
     border: 2px solid ${
-      props => props.error
-        ? colors.error
-        : colors.default
-    };
+  props => (props.error
+    ? colors.error
+    : colors.default)
+};
     padding: 5px 11px 6px;
     box-shadow: none !important;
     outline: 0;
@@ -48,11 +48,11 @@ const LabelErrorStyled = styled.span`
   color: ${colors.error};
 `
 
-function Input (props) {
+function Input(props) {
   const {
     label,
     error,
-    errorMessage
+    errorMessage,
   } = props
 
   return (
@@ -63,7 +63,7 @@ function Input (props) {
         </LabelStyled>
       </Box>
       <Box>
-        <InputStyled { ...props } />
+        <InputStyled {...props} />
       </Box>
       {error && (
         <Box mt="4px">
@@ -77,13 +77,13 @@ function Input (props) {
 Input.propTypes = {
   error: PropTypes.bool,
   errorMessage: PropTypes.string,
-  label: PropTypes.string
+  label: PropTypes.string,
 }
 
 Input.defaultProps = {
   error: false,
   errorMessage: '',
-  label: ''
+  label: '',
 }
 
 export default Input

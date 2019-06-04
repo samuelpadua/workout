@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import WorkoutLogContainer from './containers/WorkoutLog/WorkoutLog'
 import store from './store'
 
-function App () {
+function App() {
   return (
     <Provider store={store}>
       <WorkoutLogContainer />

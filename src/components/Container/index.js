@@ -11,13 +11,13 @@ const ContainerBox = styled(Box)`
   margin: auto;
 `
 
-function Container (props) {
+function Container(props) {
   const {
-    children
+    children,
   } = props
 
   return (
-    <ContainerBox { ...props }>
+    <ContainerBox {...props}>
       { children }
     </ContainerBox>
   )

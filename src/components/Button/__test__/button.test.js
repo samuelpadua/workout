@@ -8,13 +8,13 @@ import { darken } from '../../../utils/LightenDarkenColor'
 describe('Button', () => {
   describe('default', () => {
     const tree = renderer
-      .create(<Button>Default</Button>)
+      .create(<Button full>Default</Button>)
       .toJSON()
 
     it('should render Button', () => {
       expect(tree).toMatchSnapshot()
     })
-  
+
     it('should change apply dark color when :hover', () => {
       expect(tree).toHaveStyleRule('background', darken(colors.default, 10), {
         modifier: ':hover',
@@ -30,13 +30,13 @@ describe('Button', () => {
 
   describe('error', () => {
     const tree = renderer
-      .create(<Button color="error">Default</Button>)
+      .create(<Button color="error" full>Default</Button>)
       .toJSON()
 
     it('should render Button with color error', () => {
       expect(tree).toMatchSnapshot()
     })
-  
+
     it('should change apply dark 10% color when :hover', () => {
       expect(tree).toHaveStyleRule('background', darken(colors.error, 10), {
         modifier: ':hover',

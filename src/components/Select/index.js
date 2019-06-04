@@ -9,28 +9,28 @@ const SelectStyled = styled.select`
   border-radius: 4px;
   background: transparent;
   border: ${
-    props => props.error
-      ? `2px solid ${colors.error}`
-      : `1px solid ${colors.gray}`
-  };
+  props => (props.error
+    ? `2px solid ${colors.error}`
+    : `1px solid ${colors.gray}`)
+};
   font: inherit;
   color: currentColor;
   width: 100%;
   height: 3em;
   margin: 0;
   padding: ${
-    props => props.error
-      ? '5px 11px 6px'
-      : '6px 12px 7px'
-  };
+  props => (props.error
+    ? '5px 11px 6px'
+    : '6px 12px 7px')
+};
 
   &:focus, &:active {
     border-color: red;
     border: 2px solid ${
-      props => props.error
-        ? colors.error
-        : colors.default
-    };
+  props => (props.error
+    ? colors.error
+    : colors.default)
+};
     padding: 5px 11px 6px;
     box-shadow: none !important;
     outline: 0;
@@ -49,12 +49,12 @@ const LabelErrorStyled = styled.span`
   color: ${colors.error};
 `
 
-function Select (props) {
+function Select(props) {
   const {
     options,
     label,
     error,
-    errorMessage
+    errorMessage,
   } = props
 
   return (
@@ -65,7 +65,7 @@ function Select (props) {
         </LabelStyled>
       </Box>
       <Box>
-        <SelectStyled { ...props }>
+        <SelectStyled {...props}>
           <option>Selecione</option>
           {
             options.map(({ value, text }) => (
@@ -86,15 +86,17 @@ function Select (props) {
 Select.propTypes = {
   options: PropTypes.arrayOf(PropTypes.shape({
     value: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired
+    text: PropTypes.string.isRequired,
   })).isRequired,
+  label: PropTypes.string,
   error: PropTypes.bool,
-  errorMessage: PropTypes.string
+  errorMessage: PropTypes.string,
 }
 
 Select.defaultProps = {
+  label: '',
   error: false,
-  errorMessage: ''
+  errorMessage: '',
 }
 
 export default Select
