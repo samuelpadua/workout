@@ -1,0 +1,277 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form should render Form to add new workout log 1`] = `
+.c1 {
+  box-sizing: border-box;
+  padding-left: 8px;
+  padding-right: 8px;
+  width: 100%;
+}
+
+.c3 {
+  box-sizing: border-box;
+  margin-bottom: 4px;
+}
+
+.c5 {
+  box-sizing: border-box;
+}
+
+.c0 {
+  box-sizing: border-box;
+  padding-bottom: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
+  box-sizing: border-box;
+  padding-left: 8px;
+  padding-right: 8px;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+}
+
+.c6 {
+  position: relative;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border: 1px solid #8C8C8C;
+  font: inherit;
+  color: currentColor;
+  width: 100%;
+  height: 3em;
+  margin: 0;
+  padding: 6px 12px 7px;
+}
+
+.c6:focus {
+  border-color: red;
+  border: 2px solid #0086FF;
+  padding: 5px 11px 6px;
+  box-shadow: none !important;
+  outline: 0;
+}
+
+.c4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #404040;
+}
+
+.c8 {
+  position: relative;
+  border-radius: 4px;
+  background: transparent;
+  border: 1px solid #8C8C8C;
+  font: inherit;
+  color: currentColor;
+  width: 100%;
+  height: 3em;
+  margin: 0;
+  padding: 6px 12px 7px;
+}
+
+.c8:focus,
+.c8:active {
+  border-color: red;
+  border: 2px solid #0086FF;
+  padding: 5px 11px 6px;
+  box-shadow: none !important;
+  outline: 0;
+  box-shadow: none !important;
+}
+
+.c7 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #404040;
+}
+
+.c10 {
+  width: 100%;
+  padding: 6px;
+  border: 0;
+  font: inherit;
+  height: 3em;
+  border-radius: 4px;
+  background: #0086FF;
+  box-shadow: none !important;
+  outline: 0;
+  color: white;
+}
+
+.c10:hover {
+  background: #006de6;
+}
+
+.c10:active {
+  background: #0053cc;
+}
+
+<form
+  noValidate={true}
+  onSubmit={[Function]}
+>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+      width={
+        Array [
+          1,
+        ]
+      }
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+        >
+          <label
+            className="c4"
+          >
+            Tempo
+          </label>
+        </div>
+        <div
+          className="c5"
+        >
+          <input
+            className="c6"
+            label="Tempo"
+            name="timeSpent"
+            onChange={[Function]}
+            type="time"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="c1"
+      width={
+        Array [
+          1,
+        ]
+      }
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+        >
+          <label
+            className="c7"
+          >
+            Tipo
+          </label>
+        </div>
+        <div
+          className="c5"
+        >
+          <select
+            className="c8"
+            label="Tipo"
+            name="type"
+            onChange={[Function]}
+            value=""
+          >
+            <option>
+              Selecione
+            </option>
+            <option
+              value="run"
+            >
+              Corrida
+            </option>
+            <option
+              value="swimming"
+            >
+              Natação
+            </option>
+            <option
+              value="bike"
+            >
+              Bicicleta
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c1"
+      width={
+        Array [
+          1,
+        ]
+      }
+    >
+      <div
+        className="c2"
+      >
+        <div
+          className="c3"
+        >
+          <label
+            className="c4"
+          >
+            Data
+          </label>
+        </div>
+        <div
+          className="c5"
+        >
+          <input
+            className="c6"
+            label="Data"
+            name="date"
+            onChange={[Function]}
+            type="date"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="c9"
+      width={
+        Array [
+          1,
+        ]
+      }
+    >
+      <button
+        className="c10"
+        color="default"
+        type="submit"
+      >
+        Adicionar
+      </button>
+    </div>
+  </div>
+</form>
+`;
