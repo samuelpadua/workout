@@ -45,7 +45,7 @@ exports[`Select default should render Select 1`] = `
 }
 
 .c2 {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   color: #404040;
 }
@@ -58,13 +58,16 @@ exports[`Select default should render Select 1`] = `
   >
     <label
       className="c2"
-    />
+    >
+      
+    </label>
   </div>
   <div
     className="c3"
   >
     <select
       className="c4"
+      label=""
     >
       <option>
         Selecione
@@ -139,13 +142,13 @@ exports[`Select error should render Select with error state 1`] = `
 }
 
 .c2 {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   color: #404040;
 }
 
 .c6 {
-  font-size: 13px;
+  font-size: 14px;
   color: #FF253A;
 }
 
@@ -157,13 +160,16 @@ exports[`Select error should render Select with error state 1`] = `
   >
     <label
       className="c2"
-    />
+    >
+      
+    </label>
   </div>
   <div
     className="c3"
   >
     <select
       className="c4"
+      label=""
     >
       <option>
         Selecione

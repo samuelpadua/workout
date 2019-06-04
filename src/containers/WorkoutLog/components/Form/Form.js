@@ -27,22 +27,22 @@ function Form(props) {
   const selectOptions = [
     {
       value: 'run',
-      text: 'Run',
+      text: 'Corrida',
     },
     {
       value: 'swimming',
-      text: 'Swimming',
+      text: 'Natação',
     },
     {
       value: 'bike',
-      text: 'Bike',
+      text: 'Bicicleta',
     },
   ]
 
   return (
     <form onSubmit={handleSubmit} noValidate>
       <Flex pb={20}>
-        <Box width={[1]} pr={2}>
+        <Box width={[1]} px={2}>
           <Input
             name="timeSpent"
             label="Tempo"
@@ -75,7 +75,7 @@ function Form(props) {
             onChange={handleChange}
           />
         </Box>
-        <Flex width={[1]} pl={2} alignItems={errors.error ? 'center' : 'flex-end'}>
+        <Flex width={[1]} px={2} alignItems={errors.error ? 'center' : 'flex-end'}>
           <Button
             full
             type="submit"

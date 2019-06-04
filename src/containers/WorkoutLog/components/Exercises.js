@@ -7,6 +7,7 @@ import ExpandLessIcon from '@material-ui/icons/ExpandLess'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import UnfoldMoreIcon from '@material-ui/icons/UnfoldMore'
 import Table from '../../../components/Table'
+import EmptyList from '../../../components/EmptyList'
 import { colors } from '../../../constants'
 
 const IconStyled = styled(DeleteIcon)`
@@ -57,8 +58,12 @@ function Exercises(props) {
     changeFilter,
   } = props
 
+  if (!list.length) {
+    return <EmptyList />
+  }
+
   return (
-    <Flex>
+    <Flex px={2}>
       <Table>
         <thead>
           <tr>

@@ -5,8 +5,6 @@ import { Box } from '@rebass/grid'
 
 const ContainerBox = styled(Box)`
   max-width: ${props => props.maxWidth};
-  padding-left: 24px;
-  padding-right: 24px;
   width: 100%;
   margin: auto;
 `

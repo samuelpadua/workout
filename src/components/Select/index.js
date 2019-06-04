@@ -39,13 +39,13 @@ const SelectStyled = styled.select`
 `
 
 const LabelStyled = styled.label`
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   color: ${colors.mineShaft};
 `
 
 const LabelErrorStyled = styled.span`
-  font-size: 13px;
+  font-size: 14px;
   color: ${colors.error};
 `
 

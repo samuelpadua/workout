@@ -43,7 +43,7 @@ exports[`Input default should render Input 1`] = `
 }
 
 .c2 {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   color: #404040;
 }
@@ -119,13 +119,13 @@ exports[`Input error should render Input with error state 1`] = `
 }
 
 .c2 {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   color: #404040;
 }
 
 .c6 {
-  font-size: 13px;
+  font-size: 14px;
   color: #FF253A;
 }
 

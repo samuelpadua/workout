@@ -15,7 +15,7 @@ function WorkoutLogApp(props) {
 
   return (
     <Container>
-      <Box>
+      <Box px={2}>
         <h1>Exercícios</h1>
       </Box>
       <Form {...props} />
