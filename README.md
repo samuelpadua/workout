@@ -2,6 +2,8 @@
 
 Projeto para registrar histórico de atividades físicas
 
+![Tela de Exemplo](https://github.com/samuelpadua/workout/blob/master/img/exemplo.png)
+
 ### Desenvolvimento
 
 ```sh
@@ -27,6 +29,7 @@ npm run lint
 ### Construido com
 * React
 * Redux
+* Node (v9.11.2)
 
 # Author
 Samuel Padua – [@samuelpadua](https://github.com/samuelpadua) – samuel.faria@gmail.com
