@@ -1,5 +1,13 @@
 import { useState, useEffect } from 'react'
 
+const maskTimeSpent = value => (
+  value
+    .toString()
+    .replace(/\D/g, '')
+    .replace(/\D:/g, '')
+    .replace(/^(\d{2})(\d)/g, '$1:$2')
+)
+
 const useForm = (callback, validate) => {
   const [values, setValues] = useState({})
   const [errors, setErrors] = useState({ error: false, fields: {} })
@@ -22,7 +30,13 @@ const useForm = (callback, validate) => {
 
   const handleChange = (event) => {
     event.persist()
-    setValues(_values => ({ ..._values, [event.target.name]: event.target.value }))
+    let { value } = event.target
+
+    if (event.target.name === 'timeSpent') {
+      value = maskTimeSpent(value)
+    }
+
+    setValues(_values => ({ ..._values, [event.target.name]: value }))
   }
 
   return {

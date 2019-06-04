@@ -162,9 +162,10 @@ exports[`Form should render Form to add new workout log 1`] = `
           <input
             className="c6"
             label="Tempo"
+            maxLength="5"
             name="timeSpent"
             onChange={[Function]}
-            type="time"
+            type="text"
             value=""
           />
         </div>

@@ -49,7 +49,8 @@ function Form(props) {
             value={values.timeSpent || ''}
             error={!!errors.fields.timeSpent}
             errorMessage={errors.fields.timeSpent}
-            type="time"
+            type="text"
+            maxLength="5"
             onChange={handleChange}
           />
         </Box>
