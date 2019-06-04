@@ -3,53 +3,16 @@ import PropTypes from 'prop-types'
 import { Flex, Box } from '@rebass/grid'
 import styled from 'styled-components'
 import DeleteIcon from '@material-ui/icons/Delete'
-import ExpandLessIcon from '@material-ui/icons/ExpandLess'
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-import UnfoldMoreIcon from '@material-ui/icons/UnfoldMore'
 import Table from '../../../components/Table'
 import EmptyList from '../../../components/EmptyList'
 import TotalExerciseHours from './TotalExerciseHours'
+import ArrowOrderBy from './ArrowOrderBy'
 import { colors } from '../../../constants'
 
 const IconStyled = styled(DeleteIcon)`
   color: ${colors.error};
   cursor: pointer;
 `
-
-function OrderByArrow(props) {
-  const {
-    orderBy,
-    column,
-    actualColumn,
-    changeFilter,
-  } = props
-
-  const nextOrderBy = orderBy === 'asc'
-    ? 'desc'
-    : 'asc'
-
-  const payload = {
-    orderBy: nextOrderBy,
-    column: actualColumn,
-  }
-
-  if (orderBy === 'asc' && column === actualColumn) {
-    return <ExpandMoreIcon onClick={() => changeFilter(payload)} />
-  }
-
-  if (orderBy === 'desc' && column === actualColumn) {
-    return <ExpandLessIcon onClick={() => changeFilter(payload)} />
-  }
-
-  return <UnfoldMoreIcon onClick={() => changeFilter(payload)} />
-}
-
-OrderByArrow.propTypes = {
-  orderBy: PropTypes.string.isRequired,
-  column: PropTypes.string.isRequired,
-  actualColumn: PropTypes.string.isRequired,
-  changeFilter: PropTypes.func.isRequired,
-}
 
 function Exercises(props) {
   const {
@@ -74,7 +37,7 @@ function Exercises(props) {
                 <Flex justifyContent="space-between">
                   <Box>Tempo</Box>
                   <Box mr={20}>
-                    <OrderByArrow
+                    <ArrowOrderBy
                       {...filter}
                       changeFilter={changeFilter}
                       actualColumn="timeSpent"
@@ -86,7 +49,7 @@ function Exercises(props) {
                 <Flex justifyContent="space-between">
                   <Box>Tipo</Box>
                   <Box mr={20}>
-                    <OrderByArrow
+                    <ArrowOrderBy
                       {...filter}
                       changeFilter={changeFilter}
                       actualColumn="type"
@@ -98,7 +61,7 @@ function Exercises(props) {
                 <Flex justifyContent="space-between">
                   <Box>Data</Box>
                   <Box mr={20}>
-                    <OrderByArrow
+                    <ArrowOrderBy
                       {...filter}
                       changeFilter={changeFilter}
                       actualColumn="date"
