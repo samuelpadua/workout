@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { Flex, Box } from '@rebass/grid'
 import Input from '../../../../components/Input'
@@ -10,15 +10,15 @@ import validate from './validadeForm'
 
 function Form(props) {
   const {
-    add
+    add,
   } = props
 
   const {
     values,
     errors,
     handleChange,
-    handleSubmit
-  } = useForm(handleAddWorkout, validate); 
+    handleSubmit,
+  } = useForm(handleAddWorkout, validate)
 
   function handleAddWorkout() {
     add(values)
@@ -27,22 +27,22 @@ function Form(props) {
   const selectOptions = [
     {
       value: 'run',
-      text: 'Run'
+      text: 'Run',
     },
     {
       value: 'swimming',
-      text: 'Swimming'
+      text: 'Swimming',
     },
     {
       value: 'bike',
-      text: 'Bike'
-    }
+      text: 'Bike',
+    },
   ]
 
   return (
     <form onSubmit={handleSubmit} noValidate>
-      <Flex>
-        <Box width={[ 1 ]} px={2}>
+      <Flex pb={20}>
+        <Box width={[1]} pr={2}>
           <Input
             name="timeSpent"
             label="Tempo"
@@ -53,7 +53,7 @@ function Form(props) {
             onChange={handleChange}
           />
         </Box>
-        <Box width={[ 1 ]} px={2}>
+        <Box width={[1]} px={2}>
           <Select
             name="type"
             label="Tipo"
@@ -64,7 +64,7 @@ function Form(props) {
             onChange={handleChange}
           />
         </Box>
-        <Box width={[ 1 ]} px={2}>
+        <Box width={[1]} px={2}>
           <Input
             name="date"
             label="Data"
@@ -75,7 +75,7 @@ function Form(props) {
             onChange={handleChange}
           />
         </Box>
-        <Flex width={[ 1 ]} px={2} alignItems={errors.error ? 'center' : 'flex-end'}>
+        <Flex width={[1]} pl={2} alignItems={errors.error ? 'center' : 'flex-end'}>
           <Button
             full
             type="submit"
@@ -89,7 +89,7 @@ function Form(props) {
 }
 
 Form.propTypes = {
-  add: PropTypes.func.isRequired
+  add: PropTypes.func.isRequired,
 }
 
 export default Form

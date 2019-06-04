@@ -1,6 +1,6 @@
-import { combineReducers } from 'redux';
-import workoutLog from '../modules/workout-log/reducer';
+import { combineReducers } from 'redux'
+import workoutLog from '../modules/workout-log/reducer'
 
-export const Reducers = combineReducers({
+export default combineReducers({
   workoutLog,
-});
+})

@@ -1,9 +1,10 @@
 import ReduxThunk from 'redux-thunk'
 import configureMockStore from 'redux-mock-store'
 import guid from '../../../utils/guid'
-import { 
+import {
   WORKOUT_LOG_ADD,
-  WORKOUT_LOG_REMOVE
+  WORKOUT_LOG_REMOVE,
+  WORKOUT_LOG_FILTER_CHANGE,
 } from '../constants'
 import { INITIAL_STATE } from '../reducer'
 import * as actions from '../action'
@@ -13,21 +14,21 @@ const mockStore = configureMockStore([ReduxThunk])
 describe('actions Workout', () => {
   it('should add new workout item', () => {
     const store = mockStore({
-      workoutLog: INITIAL_STATE
+      workoutLog: INITIAL_STATE,
     })
 
     const payload = {
       uuid: guid(),
       timeSpent: '00:30',
       type: 'run',
-      date: '2019-06-01'
+      date: '2019-06-01',
     }
 
     const expectedActions = [
       {
         type: WORKOUT_LOG_ADD,
-        payload
-      }
+        payload,
+      },
     ]
 
     store.dispatch(actions.add(payload))
@@ -37,29 +38,51 @@ describe('actions Workout', () => {
 
   it('should remove workout item', () => {
     const store = mockStore({
-      workoutLog: INITIAL_STATE
+      workoutLog: INITIAL_STATE,
     })
 
     const payload = {
       uuid: guid(),
       timeSpent: '00:30',
       type: 'run',
-      date: '2019-06-01'
+      date: '2019-06-01',
     }
 
     const expectedActions = [
       {
         type: WORKOUT_LOG_ADD,
-        payload
+        payload,
       },
       {
         type: WORKOUT_LOG_REMOVE,
-        payload: { uuid: payload.uuid }
-      }
+        payload: { uuid: payload.uuid },
+      },
     ]
 
     store.dispatch(actions.add(payload))
     store.dispatch(actions.remove({ uuid: payload.uuid }))
+
+    expect(store.getActions()).toEqual(expectedActions)
+  })
+
+  it('should change filter applied in list of workout', () => {
+    const store = mockStore({
+      workoutLog: INITIAL_STATE,
+    })
+
+    const payload = {
+      orderBy: 'asc',
+      column: 'date',
+    }
+
+    const expectedActions = [
+      {
+        type: WORKOUT_LOG_FILTER_CHANGE,
+        payload,
+      },
+    ]
+
+    store.dispatch(actions.changeFilter(payload))
 
     expect(store.getActions()).toEqual(expectedActions)
   })

@@ -5,5 +5,5 @@ export default {
   error: '#FF253A',
   lightGray: '#E5E5E5',
   gray: '#8C8C8C',
-  mineShaft: '#404040'
+  mineShaft: '#404040',
 }

@@ -2,11 +2,11 @@
 import {
   applyMiddleware,
   compose,
-  createStore
+  createStore,
 } from 'redux'
 import ReduxThunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import { Reducers } from './reducers'
+import Reducers from './reducers'
 
 const middleware = []
 const enhancers = []
@@ -23,4 +23,4 @@ if (process.env.NODE_ENV === 'development') {
 
 const store = createStore(Reducers, composedEnhancers)
 
-export default store;
+export default store
