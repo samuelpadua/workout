@@ -1,4 +1,4 @@
-
+import persistState from 'redux-localstorage'
 import {
   applyMiddleware,
   compose,
@@ -12,6 +12,7 @@ const middleware = []
 const enhancers = []
 
 middleware.push(ReduxThunk)
+enhancers.push(persistState())
 
 enhancers.push(applyMiddleware(...middleware))
 
